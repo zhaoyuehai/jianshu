@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yuehai.jianshu.mapper.ArticleMapper">
+    <resultMap id="ArticleResultMap" type="com.yuehai.jianshu.entity.ArticleEntity">
+        <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="content" property="content" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="SelectArticle">
+        select id,content from tb_article
+    </sql>
+
+    <select id="selectArticle" resultMap="ArticleResultMap">
+        <include refid="SelectArticle"/>
+    </select>
+</mapper>
