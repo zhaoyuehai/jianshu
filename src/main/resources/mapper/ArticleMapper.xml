@@ -3,11 +3,13 @@
 <mapper namespace="com.yuehai.jianshu.mapper.ArticleMapper">
     <resultMap id="ArticleResultMap" type="com.yuehai.jianshu.entity.ArticleEntity">
         <result column="id" property="id" jdbcType="BIGINT"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="imgUrl" property="imgUrl" jdbcType="VARCHAR"/>
         <result column="content" property="content" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="SelectArticle">
-        select id,content from tb_article
+        select id,title,imgUrl,content from tb_article
     </sql>
 
     <select id="selectArticle" resultMap="ArticleResultMap">

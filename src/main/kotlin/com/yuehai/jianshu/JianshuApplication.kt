@@ -13,3 +13,4 @@ class JianshuApplication
 fun main(args: Array<String>) {
     runApplication<JianshuApplication>(*args)
 }
+
